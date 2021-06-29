@@ -14,23 +14,59 @@
         <div class="main">
             <div class="register">
                 <h1 class="text-center">Register</h1>
-                <form action="" method="post">
+                <form action="/register" method="post">
                     <div class="fgroup">
                         <label for="username">Username:</label>
                         <input class="color-black" type="text" name="username" id="username">
                     </div>
+                    {% with register_errors = get_flashed_messages(category_filter=["username"]) %}
+                        {% if register_errors %}
+                            <div>
+                                {% for message in register_errors %}
+                                    <p class="alert">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith%}
                     <div class="fgroup">
                         <label for="email">Email:</label>
                         <input class="color-black" type="email" name="email" id="email">
                     </div>
+                    {% with register_errors = get_flashed_messages(category_filter=["email"]) %}
+                        {% if register_errors %}
+                            <div>
+                                {% for message in register_errors %}
+                                    <p class="alert">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith%}
                     <div class="fgroup">
                         <label for="password">Password:</label>
                         <input class="color-black pass-font" type="password" name="password" id="password">
                     </div>
+                    {% with register_errors = get_flashed_messages(category_filter=["password"]) %}
+                        {% if register_errors %}
+                            <div>
+                                {% for message in register_errors %}
+                                    <p class="alert">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith%}
                     <div class="fgroup">
-                        <label for="confirm_password">Confirm Password:</label>
-                        <input class="color-black pass-font" type="password" name="confirm_password" id="confirm_password">
+                        <label for="confirm_pass">Confirm Password:</label>
+                        <input class="color-black pass-font" type="password" name="confirm_pass" id="confirm_pass">
                     </div>
+                    {% with register_errors = get_flashed_messages(category_filter=["confirm_pass"]) %}
+                        {% if register_errors %}
+                            <div>
+                                {% for message in register_errors %}
+                                    <p class="alert">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith%}
                     <div class="fgroup">
                         <input class="color-black submit-btn" type="submit" value="Create Account">
                     </div>
@@ -38,15 +74,24 @@
             </div>
             <div class="login">
                 <h1 class="text-center">Login</h1>
-                <form action="" method="post">
+                <form action="/login" method="post">
                     <div class="fgroup">
-                        <label for="username">Username:</label>
-                        <input class="color-black" type="text" name="username" id="username">
+                        <label for="email">Email:</label>
+                        <input class="color-black" type="text" name="email" id="email">
                     </div>
                     <div class="fgroup">
                         <label for="password">Password:</label>
                         <input class="color-black pass-font" type="password" name="password" id="password">
                     </div>
+                    {% with login_errors = get_flashed_messages(category_filter=["login"]) %}
+                        {% if login_errors %}
+                            <div>
+                                {% for message in login_errors %}
+                                    <p class="alert">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith%}
                     <div class="fgroup">
                         <input class="color-black submit-btn" type="submit" value="Continue the story">
                     </div>

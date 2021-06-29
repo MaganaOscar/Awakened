@@ -18,15 +18,14 @@ def register():
         return redirect('/')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     data = {
-        'first_name': request.form['first_name'],
-        'last_name': request.form['last_name'],
+        'username': request.form['username'],
         'email': request.form['email'],
         'password': pw_hash
     }
     user_id = User.create(data)
     session['user_id'] = user_id
     session['logged_in'] = True
-    return redirect("/save")
+    return redirect("/choose_save")
 
 @app.route('/login', methods=["POST"])
 def login():
@@ -40,4 +39,4 @@ def login():
         return redirect('/')
     session['user_id'] = user_in_db.id
     session['logged_in'] = True
-    return redirect("/save")
+    return redirect("/choose_save")

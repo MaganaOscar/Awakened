@@ -25,6 +25,12 @@ header {
 .color-black{
     color: black;
 }
+.alert{
+    color: red;
+    font-size: 0.8em;
+    text-align: end;
+    margin-top: 0.8em;
+}
 .pass-font {
     font-family: 'Courier New', Courier, monospace;
 }

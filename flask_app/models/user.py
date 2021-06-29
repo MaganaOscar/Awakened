@@ -32,7 +32,7 @@ class User:
     @classmethod
     def check_duplicate(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
-        result = connectToMySQL('car_dealz_schema').query_db(query, data)
+        result = connectToMySQL('awakened_schema').query_db(query, data)
 
         return True if len(result) > 0 else False
     
