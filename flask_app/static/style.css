@@ -1,4 +1,52 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
+    font-family: november;
+}
+@font-face {
+    font-family: november;
+    src: url('fonts/novem___.ttf');
+}
+body {
+    background-color: black;
+}
+header {
+    margin-top: 0.5em;
+    font-size: 5em;
+}
+.text-center{
+    text-align: center;
+}
+.color-black{
+    color: black;
+}
+.pass-font {
+    font-family: 'Courier New', Courier, monospace;
+}
+.fgroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+.fgroup input {
+    width: 15em;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+}
+.fgroup .submit-btn {
+    width: 100%;
+    padding: 0.5em;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin: 0em 10em;
+    margin-top: 2em;
+}
+.register, .login {
+    width: 50em;
+    height: 60em;
+    margin: 0em 2em;
 }
