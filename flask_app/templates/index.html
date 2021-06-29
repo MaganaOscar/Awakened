@@ -10,49 +10,51 @@
 <body>
     <header class="text-center">AWAKENED</header>
     <p class="text-center">Cognizance is Freedom</p>
-    <div class="main">
-        <div class="register">
-            <h1 class="text-center">Register</h1>
-            <form action="" method="post">
-                <div class="fgroup">
-                    <label for="username">Username:</label>
-                    <input class="color-black" type="text" name="username" id="username">
-                </div>
-                <div class="fgroup">
-                    <label for="email">Email:</label>
-                    <input class="color-black" type="email" name="email" id="email">
-                </div>
-                <div class="fgroup">
-                    <label for="password">Password:</label>
-                    <input class="color-black pass-font" type="password" name="password" id="password">
-                </div>
-                <div class="fgroup">
-                    <label for="confirm_password">Confirm Password:</label>
-                    <input class="color-black pass-font" type="password" name="confirm_password" id="confirm_password">
-                </div>
-                <div class="fgroup">
-                    <input class="color-black submit-btn" type="submit" value="Create Account">
-                </div>
-            </form>
+    <div class="flex">
+        <div class="main">
+            <div class="register">
+                <h1 class="text-center">Register</h1>
+                <form action="" method="post">
+                    <div class="fgroup">
+                        <label for="username">Username:</label>
+                        <input class="color-black" type="text" name="username" id="username">
+                    </div>
+                    <div class="fgroup">
+                        <label for="email">Email:</label>
+                        <input class="color-black" type="email" name="email" id="email">
+                    </div>
+                    <div class="fgroup">
+                        <label for="password">Password:</label>
+                        <input class="color-black pass-font" type="password" name="password" id="password">
+                    </div>
+                    <div class="fgroup">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input class="color-black pass-font" type="password" name="confirm_password" id="confirm_password">
+                    </div>
+                    <div class="fgroup">
+                        <input class="color-black submit-btn" type="submit" value="Create Account">
+                    </div>
+                </form>
+            </div>
+            <div class="login">
+                <h1 class="text-center">Login</h1>
+                <form action="" method="post">
+                    <div class="fgroup">
+                        <label for="username">Username:</label>
+                        <input class="color-black" type="text" name="username" id="username">
+                    </div>
+                    <div class="fgroup">
+                        <label for="password">Password:</label>
+                        <input class="color-black pass-font" type="password" name="password" id="password">
+                    </div>
+                    <div class="fgroup">
+                        <input class="color-black submit-btn" type="submit" value="Continue the story">
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="login">
-            <h1 class="text-center">Login</h1>
-            <form action="" method="post">
-                <div class="fgroup">
-                    <label for="username">Username:</label>
-                    <input class="color-black" type="text" name="username" id="username">
-                </div>
-                <div class="fgroup">
-                    <label for="password">Password:</label>
-                    <input class="color-black pass-font" type="password" name="password" id="password">
-                </div>
-                <div class="fgroup">
-                    <input class="color-black submit-btn" type="submit" value="Continue the story">
-                </div>
-            </form>
-        </div>
+        <footer class="text-center">'November' font by Brandon Schoepf (C)2000 Tepid Monkey Fonts</footer>
     </div>
-    <footer>Fon</footer>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
