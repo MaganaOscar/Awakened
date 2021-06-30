@@ -18,9 +18,16 @@ class User:
     #add user to database
     def create(cls, data):
         query = "INSERT INTO users (username, email, password, created_at, updated_at)" \
-            "VALUES (%(username)s, %(email)s, %(password)s, NOW(), NOW() )"
+            "VALUES (%(username)s, %(email)s, %(password)s, NOW(), NOW() );"
         return connectToMySQL("awakened_schema").query_db(query, data)
 
+    @classmethod
+    def get_username(cls, data):
+        query = "SELECT username FROM users WHERE id = %(id)s;"
+        result = connectToMySQL("awakened_schema").query_db(query, data)
+        if len(result) < 1:
+            return False
+        return result[0]
     @classmethod
     def get_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"

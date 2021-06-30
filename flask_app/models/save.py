@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
+from datetime import datetime
 
 class Save:
     def __init__(self, data):
@@ -12,8 +13,10 @@ class Save:
 
     @classmethod
     def create(cls, data):
-        query = "INSERT INTO saves (user_id, items, current_location, created_at, updated_at " \
-            "VALUES ( %(user_id)s, %(items)s, %(current_location)s, NOW(), NOW() )"
+        data['created_at'] = datetime.now()
+        data['updated_at'] = datetime.now()
+        query = "INSERT INTO saves (user_id, name, items, current_location, created_at, updated_at " \
+            "VALUES ( %(user_id)s, %(name)s, %(items)s, %(current_location)s, %(created_at)s, %(updated_at)s )"
         return connectToMySQL("awakened_schema").query_db(query, data)
     
     @classmethod

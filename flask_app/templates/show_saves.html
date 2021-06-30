@@ -8,7 +8,18 @@
     <title>Your Saves</title>
 </head>
 <body>
-    <p>Welcome, {{</p>
+    <div class="main flex">
+        <header class="text-center">Welcome, {{username}}</header>
+        <div class="saves">
+            {% for save in saves %}
+                <div class="save">
+                    <p>{{save.name}}</p>
+                    <p>Location: {{save.current_location}}</p>
+                    <!-- track time since save creation -->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
