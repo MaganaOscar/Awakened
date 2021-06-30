@@ -17,6 +17,8 @@ header {
 }
 .flex {
     display: flex;
+}
+.flex-column {
     flex-direction: column;
 }
 .text-center{
@@ -64,9 +66,20 @@ footer {
     margin-top: 20em;
     font-size: 0.8em;
 }
+.saves{
 
-.btn-save, .btn-new-save {
+}
+.save{
     margin-top: 3em;
+}
+.btn-select-save {
+    text-decoration: none;
+    margin-left: 10em;
+    padding: 0.5em 1em;
+    border: 2px white solid;
+}
+.btn-save, .btn-new-save {
+    margin-top: 2em;
     width: 20em;
     padding: 1em;
     font-size: 1.5em;

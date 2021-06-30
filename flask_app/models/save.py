@@ -6,6 +6,7 @@ class Save:
     def __init__(self, data):
         self.id = data['id']
         self.user_id = data['user_id']
+        self.name = data['name']
         self.items = data['items']
         self.current_location = data['current_location']
         self.created_at = data['created_at']
@@ -15,7 +16,7 @@ class Save:
     def create(cls, data):
         data['created_at'] = datetime.now()
         data['updated_at'] = datetime.now()
-        query = "INSERT INTO saves (user_id, name, items, current_location, created_at, updated_at " \
+        query = "INSERT INTO saves (user_id, name, items, current_location, created_at, updated_at) " \
             "VALUES ( %(user_id)s, %(name)s, %(items)s, %(current_location)s, %(created_at)s, %(updated_at)s )"
         return connectToMySQL("awakened_schema").query_db(query, data)
     

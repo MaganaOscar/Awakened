@@ -11,3 +11,19 @@ def choose_save():
     else:
         return redirect('/')
     return render_template("show_saves.html", saves = saves, username = username['username'])
+
+@app.route('/new_save', methods=["POST"])
+def new_save():
+    data = {
+        'user_id': session['user_id'],
+        'name': request.form['new-save'],
+        'items': "",
+        'current_location': 1
+    }
+    save_id = Save.create(data)
+    session['save_id'] = save_id
+    return redirect('/adventure')
+
+@app.route('/adventure')
+def adventure():
+    return render_template("adventure.html")

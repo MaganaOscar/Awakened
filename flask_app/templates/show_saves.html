@@ -8,14 +8,17 @@
     <title>Your Saves</title>
 </head>
 <body>
-    <div class="main flex align-cent">
+    <div class="main flex flex-column align-cent">
         <header class="text-center">Welcome, {{username}}</header>
         <div class="saves">
             {% for save in saves %}
-                <div class="save">
-                    <p>{{save.name}}</p>
-                    <p>Location: {{save.current_location}}</p>
-                    <!-- track time since save creation -->
+                <div class="save flex align-cent">
+                    <div class="save-info">
+                        <p>{{ save.name }}</p>
+                        <p>Location: {{ save.current_location }}</p>
+                        <p>Play time: {{ save.updated_at - save.created_at }}</p>
+                    </div>
+                    <a class="btn-select-save" href="/select_save/{{save.id}}">Continue</a>
                 </div>
             {% endfor %}
         </div>
