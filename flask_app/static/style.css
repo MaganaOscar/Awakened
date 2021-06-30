@@ -64,3 +64,27 @@ footer {
     margin-top: 20em;
     font-size: 0.8em;
 }
+
+.btn-save, .btn-new-save {
+    margin-top: 3em;
+    width: 20em;
+    padding: 1em;
+    font-size: 1.5em;
+}
+.btn-new-save {
+    margin-top: 0.25em;
+    padding: 0.5em 1em;
+}
+.save-form {
+    margin-top: 3em;
+}
+.save-label{
+    display: flex;
+    justify-content: space-between;
+}
+.save-label input {
+    width: 20em;
+}
+.align-cent {
+    align-items: center;
+}

@@ -8,7 +8,7 @@
     <title>Your Saves</title>
 </head>
 <body>
-    <div class="main flex">
+    <div class="main flex align-cent">
         <header class="text-center">Welcome, {{username}}</header>
         <div class="saves">
             {% for save in saves %}
@@ -19,6 +19,10 @@
                 </div>
             {% endfor %}
         </div>
+        <div id="new-save-form">
+            
+        </div>
+        <button class="btn-save color-black" onclick="new_save(this)">New Save</button>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
