@@ -14,5 +14,17 @@ const handleSubmit = (e) => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
+            if (data.display) {
+                let display_error = document.getElementById("decisionError");
+                display_error.innerHTML = "";
+
+                let display_room = document.getElementById("display-room");
+                display_room.innerHTML = data.display + "<br><br>";
+
+            } else {
+                let display_error = document.getElementById("decisionError");
+                display_error.innerHTML = "<p></p><p>Unknown Command</p>";
+            }
         })
+        .catch((err) => console.log(err));
 }
