@@ -8,12 +8,17 @@
     <title>AWAKENED</title>
 </head>
 <body>
-    <div class="main">
-        <div id="display-room" class="text-center">
-            
-                {{room.content}}
+    <div class="main flex flex-column align-cent">
+        <div id="display-room" class="text-center">          
+                {% for bit in room.content.split("/") %}
+                    {{bit}}<br><br>
+                {% endfor %}
         </div>
+        <form id="decisionForm"  class="align-cent flex" onsubmit="event.preventDefault(); handleSubmit(this);">
+            <p class="decision-arrow">></p>
+            <input autofocus type="text" name="decision" id="decision">
+        </form>
     </div>
-    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}" async></script>
 </body>
 </html>

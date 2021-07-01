@@ -105,3 +105,17 @@ footer {
     margin-top: 2em;
     font-size: 2em;
 }
+.decision-arrow{
+    font-size: 3em;
+    margin-right: 0.25em;
+}
+#decision {
+    width: 18em;
+    background-color: black;
+    border:none;
+    font-size: 2em;
+    padding-bottom: 0.3em;
+}
+#decision:focus {
+    outline: none;
+}

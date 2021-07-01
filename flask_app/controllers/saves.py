@@ -34,5 +34,6 @@ def new_save():
 @app.route('/adventure')
 def adventure():
     loc_id = Save.get_save_location({'id': session['save_id']})
+    session['room_id'] = loc_id
     room = Room.get_room({'id': loc_id})
     return render_template("adventure.html", room = room)
