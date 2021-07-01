@@ -9,6 +9,8 @@ bcrypt  = Bcrypt(app)
 def index():
     if 'user_id' in session:
         session.pop('user_id')
+    if 'save_id' in session:
+        session.pop('save_id')
     session['logged_in'] = False
     return render_template("index.html")
 

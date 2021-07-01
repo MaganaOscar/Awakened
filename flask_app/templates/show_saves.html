@@ -18,7 +18,10 @@
                         <p>Location: {{ save.current_location }}</p>
                         <p>Play time: {{ save.updated_at - save.created_at }}</p>
                     </div>
-                    <a class="btn-select-save" href="/select_save/{{save.id}}">Continue</a>
+                    <form action="/select_save" method="post">
+                        <input type="hidden" name="save_id" value="{{save.id}}">
+                        <button class="btn-select-save">Continue</button>
+                    </form>
                 </div>
             {% endfor %}
         </div>

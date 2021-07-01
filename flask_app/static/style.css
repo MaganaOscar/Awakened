@@ -73,10 +73,10 @@ footer {
     margin-top: 3em;
 }
 .btn-select-save {
-    text-decoration: none;
+    background-color: black;
     margin-left: 10em;
     padding: 0.5em 1em;
-    border: 2px white solid;
+    border: 3px white solid;
 }
 .btn-save, .btn-new-save {
     margin-top: 2em;
@@ -100,4 +100,8 @@ footer {
 }
 .align-cent {
     align-items: center;
+}
+#display-room {
+    margin-top: 2em;
+    font-size: 2em;
 }
