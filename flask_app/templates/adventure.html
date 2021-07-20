@@ -14,7 +14,7 @@
                     {{bit}}<br><br>
                 {% endfor %}
         </div>
-        <form id="decisionForm"  class="align-cent flex" onsubmit="event.preventDefault(); handleSubmit(this);">
+        <form autocomplete="off" id="decisionForm"  class="align-cent flex" onsubmit="event.preventDefault(); handleSubmit(this);">
             <p class="decision-arrow">></p>
             <input autofocus type="text" name="decision" id="decision">
         </form>

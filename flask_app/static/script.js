@@ -21,6 +21,9 @@ const handleSubmit = (e) => {
                 let display_room = document.getElementById("display-room");
                 display_room.innerHTML = data.display + "<br><br>";
 
+                let decision = document.getElementById("decision");
+                decision.value = "";
+
             } else {
                 let display_error = document.getElementById("decisionError");
                 display_error.innerHTML = "<p></p><p>Unknown Command</p>";
