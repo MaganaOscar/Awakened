@@ -18,13 +18,19 @@ def select_save():
     session['save_id'] = request.form['save_id']
     return redirect('/adventure')
 
+@app.route('/delete_save', methods=["POST"])
+def delete_save():
+    Save.delete_save({'id': request.form['save_id']})
+    return redirect('/choose_save')
+
 @app.route('/new_save', methods=["POST"])
 def new_save():
     data = {
         'user_id': session['user_id'],
         'name': request.form['new-save'],
         'items': "",
-        'current_location': 1
+        'current_location': 1,
+        'play_time' : 0
     }
     save_id = Save.create(data)
     Save.add_visited({'save_id': save_id, 'room_id': 1})
@@ -37,3 +43,9 @@ def adventure():
     session['room_id'] = loc_id
     room = Room.get_room({'id': loc_id})
     return render_template("adventure.html", room = room)
+
+@app.route('/update_time/<int:id>', methods=['POST'])
+def update_time(id):
+    Save.update_play_time({'id': id})
+    return "success"
+

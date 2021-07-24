@@ -7,9 +7,10 @@ function new_save(elem) {
 }
 
 const handleSubmit = (e) => {
-    console.log(e);
     let form = new FormData(e);
-    console.log(form);
+    for (var pair of form.entries()){
+        console.log(pair[0], pair[1]);
+    }
     fetch("http://localhost:5000/decision_interpreter", {method: "POST", body: form})
         .then((response) => response.json())
         .then((data) => {
@@ -30,4 +31,4 @@ const handleSubmit = (e) => {
             }
         })
         .catch((err) => console.log(err));
-}
+    }

@@ -21,7 +21,9 @@
         <div id="decisionError">
 
         </div>
+        <input type="hidden" id="saveId" name="saveId" value="{{session['save_id']|int}}">
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}" async></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='timer.js') }}" async></script>
 </body>
 </html>

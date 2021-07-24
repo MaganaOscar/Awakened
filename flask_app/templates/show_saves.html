@@ -16,12 +16,18 @@
                     <div class="save-info">
                         <p>{{ save.name }}</p>
                         <p>Location: {{ save.current_location }}</p>
-                        <p>Play time: {{ save.updated_at - save.created_at }}</p>
+                        <p>Play time: {{ save.play_time }}</p>
                     </div>
-                    <form action="/select_save" method="post">
-                        <input type="hidden" name="save_id" value="{{save.id}}">
-                        <button class="btn-select-save">Continue</button>
-                    </form>
+                    <div class="flex flex-column align-cent">
+                        <form action="/select_save" method="post">
+                            <input type="hidden" name="save_id" value="{{save.id}}">
+                            <button class="btn-select-save">Continue</button>
+                        </form>
+                        <form action="/delete_save" method="post">
+                            <input type="hidden" name="save_id" value="{{save.id}}">
+                            <button class="btn-delete-save">Delete</button>
+                        </form>
+                    </div>
                 </div>
             {% endfor %}
         </div>

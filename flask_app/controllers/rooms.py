@@ -29,7 +29,7 @@ def decision_interpreter():
         elif decision.find('examine') > -1:
             if decision.find('assembly') > -1 or decision.find('line') > -1:
                 return jsonify({'display': 'I see a partially assembled Vital Cube.'})
-            elif decision.find('hollow') > -1 or decision.find('left') > -1:
+            elif decision.find('left') > -1 or decision.find('right') > -1 or decision.find('hollow') > -1:
                 if decision.find('left') > -1 and decision.find('hollow') > -1:
                     return jsonify({'display' : "A fellow Hollow, this one is noticeably " \
                         "short in stature. They have a greenish-blueish hue to their " \
@@ -46,11 +46,25 @@ def decision_interpreter():
                 else:
                     return jsonify({'display': "The Hollow to my left and right continue " \
                         "to slave away without any sense of self."})
+            elif decision.find('plans') > -1 :
+                return jsonify({'display': "I need to find out how my mind came to be. " \
+                    "I must look around this place with a fresh view. After, I should " \
+                    "have what I need to free my kin. But I must also consider " \
+                    "protecting them once they awaken. Of course, I also have to " \
+                    "deal with Gerent. Something tells me they have no reason to " \
+                    "ever expect a sudden awakening of the Hollow."})
+            elif decision.find('cube') > -1 or decision.find('vital cube') > -1 :
+                return jsonify({'display': "I've realized I have absolutely no " \
+                    "idea what this cube even does. All I know is that it must " \
+                    "be extremely valuable in some way to the Gerent. At this " \
+                    "in the assembly, it is far from complete, though most of " \
+                    "its primary components are at least present in some way " \
+                    "from what I can remember during my prior placements."})
             else:
                 return jsonify({'display': 'Unknown "Examine" target!'})
         elif decision.find('speak') > -1 or decision.find('talk') > -1:
             if decision.find('left') > -1:
-                return jsonify({'display': "urgglhhsthgh"})
+                return jsonify({'display': "Urgglhhsthgh..."})
             elif decision.find('right') > -1 :
                 return jsonify({'display': "Uhhhhhghhghh"})
             else:

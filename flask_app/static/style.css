@@ -72,11 +72,19 @@ footer {
 .save{
     margin-top: 3em;
 }
-.btn-select-save {
+.btn-select-save, .btn-delete-save {
     background-color: black;
     margin-left: 10em;
     padding: 0.5em 1em;
+    width: 7em;
+}
+.btn-select-save {
     border: 3px white solid;
+}
+.btn-delete-save {
+    border: 3px white solid;
+    border-top: none;
+    color: red;
 }
 .btn-save, .btn-new-save {
     margin-top: 2em;
